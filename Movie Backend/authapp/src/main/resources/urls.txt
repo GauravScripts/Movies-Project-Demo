@@ -1,0 +1,50 @@
+
+----------- step 1 ---------------------
+REGISTER USER in AUTH-APP
+POST
+http://localhost:4444/auth-app-v1/register-user
+{
+    "emailId":"ravi@gmail.com",
+    "password":"12345"
+}
+NOTE: role is hardcoded as ROLE_USER
+
+------------step 2 ---------------------
+ADD USER in PRODUCT-APP
+POST
+http://localhost:5555/product-app-v1/add-user
+{
+"emailId":"ravi@gmail.com",
+"userName":"Ravi",
+"address":"Delhi",
+"mobileNo":"32423432"
+}
+NOTE: products[ ] is hardcoded
+
+-----------step 3 ---------------------
+LOGIN CHECK in AUTH-APP
+POST
+http://localhost:4444/auth-app-v1/login-check
+{
+  "emailId":"ravi@gmail.com",
+   "password":"12345"
+}
+
+
+------ step 4 ------------
+GET ALL USER DETIAILS in PRDOCUT-APP
+GET
+http://localhost:5555/product-app-v1/get-all-users
+with token
+
+
+
+GET CURRENTLY LOGGED-IN USER DETAILS in PRODUCT-APP
+GET
+http://localhost:5555/product-app-v1/get-user-details
+with token
+
+------ step 5 ----------
+to add product under current user
+POST
+http://localhost:5555/product-app-v1/add-product

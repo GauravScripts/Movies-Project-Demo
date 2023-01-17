@@ -1,0 +1,18 @@
+package com.example.movielist.domain;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Document
+public class Movie {
+    @Id
+    private String movieId;
+    private String movieName, movieDesc;
+    private int movieRating;
+}
