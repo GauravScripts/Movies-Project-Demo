@@ -1,1 +1,49 @@
-<p>login works!</p>
+<form [formGroup]="loginForm" (ngSubmit)="sendLoginData()">
+  <div class="wave-group">
+    <input required="" type="text" class="input" formControlName="emailId" >
+    <span class="bar"></span>
+    <label class="label">
+      <span class="label-char" style="--index: 0">E</span>
+      <span class="label-char" style="--index: 1">m</span>
+      <span class="label-char" style="--index: 2">a</span>
+      <span class="label-char" style="--index: 3">i</span>
+      <span class="label-char" style="--index: 4">l</span>
+      <span class="label-char" style="--index: 5">&nbsp;</span>
+      <span class="label-char" style="--index: 6">I</span>
+      <span class="label-char" style="--index: 7">d</span>
+    </label>
+  </div>
+  <br>
+  <div class="wave-group">
+    <input required="" class="input" type="password" formControlName="password" >
+    <span class="bar"></span>
+    <label class="label">
+      <span class="label-char" style="--index: 0">P</span>
+      <span class="label-char" style="--index: 1">a</span>
+      <span class="label-char" style="--index: 2">s</span>
+      <span class="label-char" style="--index: 3">s</span>
+      <span class="label-char" style="--index: 4">w</span>
+      <span class="label-char" style="--index: 5">o</span>
+      <span class="label-char" style="--index: 6">r</span>
+      <span class="label-char" style="--index: 7">d</span>
+    </label>
+  </div>
+  <br>
+
+  <button class="button" style="vertical-align:middle" type="submit" value="Login" (click)="validate()"><span>Login</span></button>
+</form>
+<br>
+<div class="card">
+  <div class="content">
+    <div class="front">
+      <h3 class="title">Hey</h3>
+      <p class="subtitle">About us :)</p>
+    </div>
+
+    <div class="back">
+      <p class="description">
+        Search and browse popular movies with authentication system and the ability to save favorite movies.
+      </p>
+    </div>
+  </div>
+</div>

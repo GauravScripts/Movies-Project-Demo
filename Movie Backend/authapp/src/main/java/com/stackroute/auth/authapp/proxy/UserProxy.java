@@ -6,11 +6,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-// http://localhost:5555/product-app-v1/add-user
-@FeignClient(name="product-service", url="localhost:5555")
+// http://localhost:6666/product-app-v1/add-user
+@FeignClient(name="movie-service", url="localhost:8080")
 public interface UserProxy {
-    @PostMapping("/product-app-v1/add-user")
-    public abstract ResponseEntity<?> sendUserDtoToProductApp(@RequestBody UserDTO userDTO);
+    @PostMapping("/movie/add-user")
+    public abstract ResponseEntity<?> sendUserDtoToMoiveApp(@RequestBody UserDTO userDTO);
  }
 
 

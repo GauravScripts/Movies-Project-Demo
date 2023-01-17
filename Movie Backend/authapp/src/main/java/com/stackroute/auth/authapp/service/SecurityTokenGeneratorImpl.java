@@ -28,6 +28,7 @@ public class SecurityTokenGeneratorImpl implements SecurityTokenGenerator{
                 .compact();
 
         result.put("token",jwt);
+//        result.put(user.getEmailId(),user.getPassword());
         result.put("message","User login success");
         result.put("role",user.getRole()); //This line is adding the role of the user to the result map.
         return result;

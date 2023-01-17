@@ -32,7 +32,7 @@ public class UserServiceImpl implements UserService {
         // call proxy method and pass DTO
         UserDTO userDTO = new UserDTO(signupData.getEmailId(),signupData.getUserName(),
                 signupData.getMobileNo(), signupData.getAddress());
-        ResponseEntity response = userProxy.sendUserDtoToProductApp(userDTO); // inserts user record in ProductApp (MongoDB)
+        ResponseEntity response = userProxy.sendUserDtoToMoiveApp(userDTO); // inserts user record in ProductApp (MongoDB)
         // above method raises POST request as 'http://localhost:5555/product-app-v1/add-user' + userDto Object
         System.out.println(response);
 

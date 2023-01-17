@@ -14,9 +14,9 @@ public class AppConfig {
         return builder.routes()
                 .route( p-> p
                         .path("/auth-app-v1/**")
-                        .uri("http://localhost:4444/*"))
+                        .uri("http://localhost:4445/*"))
                 .route(p->p
-                        .path("/product-app-v1/**")
+                        .path("/movie/**")
                         .uri("http://localhost:5555/*"))
         .build();
     }

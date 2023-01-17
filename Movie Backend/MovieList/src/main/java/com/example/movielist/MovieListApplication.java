@@ -18,15 +18,16 @@ public class MovieListApplication {
     }
     @Bean // Annotation indicating that this method returns an instance that should be managed by the Spring framework
     public FilterRegistrationBean filterUrl(){
+        System.out.println("Filtering on all URLs");
         // returns list of Intercepted URLs along with verification process
         FilterRegistrationBean frb = new FilterRegistrationBean();
         // which verification process to be followed
         frb.setFilter(new JwtFilter());
         // which URLs to be intercepted
         // "/product-app-v1/get-add-users"
-        frb.addUrlPatterns("/product-app-v1/get-user-details","/product-app-v1/add-product-to-user",
-                "/product-app-v1/admin/add-new-product","/product-app-v1/admin/update-product",
-                "/product-app-v1/admin/delete-product");
+        frb.addUrlPatterns("/movie/get-user-details","/movie/add-movie-to-user",
+                "/movie/admin/add-new-movie","/movie/admin/update-movie",
+                "/movie/admin/delete-movie");
         return frb;
     }
 

@@ -1,1 +1,44 @@
-<p>admin-dashboard works!</p>
+<form [formGroup]="movieForm" (ngSubmit)="sendMovieData()">
+  Movie ID <input type="text" formControlName="movieId"/>
+  <br>
+  Movie Name <input type="text" formControlName="movieName"/>
+  <br>
+  Desc <input type="text" formControlName="movieDesc"/>
+  <br>
+  Movie Rating <input type="number" formControlName="movieRating"/>
+  <br>
+  <input type="submit" value="Add Movie"/>
+</form>
+<table>
+  <thead>
+    <th>Movie ID</th>
+    <th>Movie Name</th>
+    <th>Desc</th>
+    <th>Rating</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let movie of allMovies">
+      <td>{{movie.movieId}}</td>
+      <td>{{movie.movieName}}</td>
+      <td>{{movie.movieDesc}}</td>
+      <td>{{movie.movieRating}}</td>
+  <td>
+    <button (click)="deleteMovie(movie.movieId)">Delete</button>
+    <button (click)="getEditableMovie(movie)">Update</button>
+  </td>
+    </tr>
+   </tbody>
+</table>
+<br>
+<h3>Movie update Form</h3>
+<form [formGroup]="editMovieForm" (ngSubmit)="updateMovie()">
+  Movie ID <input type="text" formControlName="movieId"/>
+  <br>
+  Movie Name <input type="text" formControlName="movieName"/>
+  <br>
+  Desc <input type="text" formControlName="movieDesc"/>
+  <br>
+  Movie Rating <input type="number" formControlName="movieRating"/>
+  <br>
+  <input type="submit" value="Update Movie"/>
+</form>

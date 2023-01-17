@@ -35,6 +35,7 @@ public class UserMovieController {
     // http://localhost:8080/movie/add-movie-to-user [POST]
     @PostMapping("add-movie-to-user") // Annotation for mapping this method to handle POST requests to the '/movie/add-movie-to-user' endpoint
     public ResponseEntity<?> addMovie(@RequestBody Movie movie, HttpServletRequest request){
+        System.out.println("Movie: " + movie);
         String current_email = (String) request.getAttribute("current_user_emailid"); // Get the emailId of the current user from the request
         return ResponseEntity.ok(userMovieService.addMovie(current_email,movie)); // calls the addMovie method on userMovieService to add a movie to the current user's movies list and returns a response with the updated user
     }
